@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './css/styles.css';
+import '../css/styles.css';
 import Exchange from '../services/exchange-service.js';
 
 function clearFields() {
@@ -10,7 +10,7 @@ function clearFields() {
 }
 
 function displayExchange(currency, currencyType, USD, CAD, EUR, YEN, HKD, GBP) {
-  $('.display-conversion').text(`The exchange rate of ${currency} ${currencyType}} is:`);
+  $('.display-conversion').text(`The exchange rate of ${currency} ${currencyType} is:`);
   $('.USD-conversion').text(`${USD * currency} in USD`);
   $('.CAD-conversion').text(`${CAD * currency} in CAD`);
   $('.EUR-conversion').text(`${EUR * currency} in EUR`);
@@ -25,15 +25,16 @@ function displayErrors(error) {
 }
 
 $(document).ready(function() {
-  $('#money').submit(function(event) {
-    event.preventDefault();
+  $('#money').click(function(event) {
     let currency = parseInt($('#currency').val());
+    //console.log(currency)
     let currencyType = $('input:radio[name=currency-type]:checked').val();
+    //console.log(currencyType)
     clearFields();
     Exchange.exchangeMoney(currencyType)
       .then(function(exchangeResponse) {
         if (exchangeResponse instanceof Error) {
-          throw Error(`ExchangeRate-API API error: ${exchangeResponse.message}`);
+          throw Error(`ExchangeRate-API API error: ${exchangeResponse}`);
         }
         const USDexchangeReturn = exchangeResponse.conversion_rates.USD;
         const CADexchangeReturn = exchangeResponse.conversion_rates.CAD;
@@ -44,7 +45,8 @@ $(document).ready(function() {
         displayExchange(currency, currencyType, USDexchangeReturn, CADexchangeReturn, EURexchangeReturn, JPYexchangeReturn, HKDexchangeReturn, GBPexchangeReturn);
       })
       .catch(function(error) {
-        displayErrors(error.message)
-      })
+        displayErrors(error.message);
+      });
+    event.preventDefault();
   });
 });
