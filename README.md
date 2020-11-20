@@ -57,6 +57,11 @@ _4. Follow instructions above regarding set up and API key creation._
 <p>
 
 | Description | Input | Ouput |
+| :---------- | :---- | :---- |
+| Exchange |||
+| Should correctly make API call to ExchangeRate-API || reesponse = 200 OK |
+| Should correctly throw error | API_KEY="invalid" | response = "invalid key" | 
+
 
 </p>
 </details>
