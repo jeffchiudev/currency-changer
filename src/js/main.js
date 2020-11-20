@@ -6,6 +6,7 @@ import Exchange from '../services/exchange-service.js';
 
 function clearFields() {
   $('.show-errors').text('');
+  //$('#input').hide();
 }
 
 function displayExchange(currency, currencyType, USD, CAD, EUR, YEN, HKD, GBP) {

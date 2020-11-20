@@ -7,60 +7,71 @@
 
 <body>
   <div class="container">
+    <div class="jumbotron">
+      <h1>Easy Currency Exchange</h1>
+      <p>Your #1 source for easy exchanging needs!</p>
+    </div>
     <div>
       <form id="input">
         <label for="currency">Please input how much you are exchanging:</label>
         <input id="currency" class="form-control" type="number" required>
-        <div class="type-of-money">
-          <p>Please pick the type of currency you're exchanging FROM:</p>
-          <div class="radio">
-            <label>
-              <input type="radio" name="currency-type" value="USD" checked>
-              US Dollars
-          </label>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="type-of-money">
+              <p>Please pick the type of currency you're exchanging FROM:</p>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="currency-type" value="USD" checked>
+                  US Dollars
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="currency-type" value="CAD">
+                  Canadian Dollar
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="currency-type" value="EUR">
+                  Euro
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="currency-type" value="JPY">
+                  Yen
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="currency-type" value="HKD">
+                  Hong Kong Dollar
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="currency-type" value="GBP">
+                  Pound Sterling
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="display-conversion"></div>
+            <div class="USD-conversion"></div>
+            <div class="CAD-conversion"></div>
+            <div class="EUR-conversion"></div>
+            <div class="YEN-conversion"></div>
+            <div class="HKD-conversion"></div>
+            <div class="GBP-conversion"></div>
+            <div class="show-errors"></div>
+          </div>
         </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="currency-type" value="CAD">
-            Canadian Dollar
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="currency-type" value="EUR">
-            Euro
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="currency-type" value="JPY">
-            Yen
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="currency-type" value="HKD">
-            Hong Kong Dollar
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="currency-type" value="GBP">
-            Pound Sterling
-          </label>
-        </div>
-      </div>
-      <button class="btn btn-success" id="money">Get your conversions</button>
-    </form>
+        <button class="btn btn-success" id="money">Get your conversions</button>
+      </form>
+    </div>
   </div>
-  <div class="display-conversion"></div>
-    <div class="USD-conversion"></div>
-    <div class="CAD-conversion"></div>
-    <div class="EUR-conversion"></div>
-    <div class="YEN-conversion"></div>
-    <div class="HKD-conversion"></div>
-    <div class="GBP-conversion"></div>
-  <div class="show-errors"></div>
-  </body>
-  
+</body>
+
 </html>
