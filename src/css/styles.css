@@ -9,3 +9,7 @@ body {
 .display-conversion {
   font-size: 17px;
 }
+
+  .USD-conv, .CAD-conv, .EUR-conv, .YEN-conv, .HKD-conv, .GBP-conv {
+  margin: 10px 0px;
+}
