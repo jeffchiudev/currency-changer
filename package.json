@@ -1,5 +1,5 @@
 {
-  "name": "Currency Changer",
+  "name": "currency-changer",
   "version": "1.0.0",
   "description": "Takes USD to other currency",
   "main": "main.js",
