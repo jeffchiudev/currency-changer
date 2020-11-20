@@ -9,14 +9,14 @@ function clearFields() {
   $('.show-errors').text('');
 }
 
-function displayExchange(response) {
-  $('.display-conversion').text(`The exchange rate of ${currency} ${currency-type}} is:`);
-  $('.USD-conversion').text(`${USDexchangeReturn} in USD`);
-  $('.CAD-conversion').text(`${CADexchangeReturn} in CAD`);
-  $('.EUR-conversion').text(`${EURexchangeReturn} in EUR`);
-  $('.YEN-conversion').text(`${YENexchangeReturn} in YEN`);
-  $('.HKD-conversion').text(`${HKDexchangeReturn} in HKD`);
-  $('.GBP-conversion').text(`${GBPexchangeReturn} in GBP`);
+function displayExchange(currency, currencyType, USD, CAD, EUR, YEN, HKD, GBP) {
+  $('.display-conversion').text(`The exchange rate of ${currency} ${currencyType}} is:`);
+  $('.USD-conversion').text(`${USD * currency} in USD`);
+  $('.CAD-conversion').text(`${CAD * currency} in CAD`);
+  $('.EUR-conversion').text(`${EUR * currency} in EUR`);
+  $('.YEN-conversion').text(`${YEN * currency} in YEN`);
+  $('.HKD-conversion').text(`${HKD * currency} in HKD`);
+  $('.GBP-conversion').text(`${GBP * currency} in GBP`);
   
 }
 
@@ -27,22 +27,21 @@ function displayErrors(error) {
 $(document).ready(function() {
   $('#money').submit(function(event) {
     event.preventDefault();
-    let currency = $('#currency').val();
-    let currency-type = $('input:radio[name=currency-type]:checked').val();
+    let currency = parseInt($('#currency').val());
+    let currencyType = $('input:radio[name=currency-type]:checked').val();
     clearFields();
-    Exchange.exchangeMoney(currency)
+    Exchange.exchangeMoney(currencyType)
       .then(function(exchangeResponse) {
         if (exchangeResponse instanceof Error) {
           throw Error(`ExchangeRate-API API error: ${exchangeResponse.message}`);
         }
-        const USDexchangeReturn = exchangeResponse.USD
-        const CADexchangeReturn = exchangeResponse.CAD;
-        const EURexchangeReturn = exchangeResponse.EUR;
-        const JPYexchangeReturn = exchangeResponse.JPY
-        const HKDexchangeReturn = exchangeResponse.HKD
-        const GBPexchangeReturn = exchangeResponse.GBP
-        
-        displayExchange(CANexchangeReturn);
+        const USDexchangeReturn = exchangeResponse.conversion_rates.USD;
+        const CADexchangeReturn = exchangeResponse.conversion_rates.CAD;
+        const EURexchangeReturn = exchangeResponse.conversion_rates.EUR;
+        const JPYexchangeReturn = exchangeResponse.conversion_rates.JPY;
+        const HKDexchangeReturn = exchangeResponse.conversion_rates.HKD;
+        const GBPexchangeReturn = exchangeResponse.conversion_rates.GBP;
+        displayExchange(currency, currencyType, USDexchangeReturn, CADexchangeReturn, EURexchangeReturn, JPYexchangeReturn, HKDexchangeReturn, GBPexchangeReturn);
       })
       .catch(function(error) {
         displayErrors(error.message)
