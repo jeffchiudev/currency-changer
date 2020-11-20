@@ -5,7 +5,6 @@ import '../css/styles.css';
 import Exchange from '../services/exchange-service.js';
 
 function clearFields() {
-  $('#currency').val('');
   $('.show-errors').text('');
 }
 
@@ -17,7 +16,6 @@ function displayExchange(currency, currencyType, USD, CAD, EUR, YEN, HKD, GBP) {
   $('.YEN-conversion').text(`${YEN * currency} in YEN`);
   $('.HKD-conversion').text(`${HKD * currency} in HKD`);
   $('.GBP-conversion').text(`${GBP * currency} in GBP`);
-  
 }
 
 function displayErrors(error) {
