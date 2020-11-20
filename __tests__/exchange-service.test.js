@@ -1,4 +1,4 @@
-import Exchange from '../src/services/exchange-service';
+import Exchange from '../src/services/exchangeTest.js';
 
 describe('Exchange', () => {
   let exchange1;
@@ -7,6 +7,6 @@ describe('Exchange', () => {
   });
 
   test('Should correctly make API call to ExchangeRate-API', () => {
-    expect(exchange1.response).toEqual('success');
+    expect(exchange1.result).toEqual('success');
   })
 })
