@@ -10,13 +10,13 @@ function clearFields() {
 }
 
 function displayExchange(response) {
-  $('.display-conversion').text(`The exchange rate of ${currency} ${currency-type}}`)
+  $('.display-conversion').text(`The exchange rate of ${currency} ${currency-type}} is:`);
 }
 
 $(document).ready(function() {
-  $('#TODO-form').submit(function(event) {
+  $('#money').submit(function(event) {
     event.preventDefault();
     let currency = $('#currency').val();
-    let currencyType = $('input:radio[name=currency-type]:checked').val();
+    let currency-type = $('input:radio[name=currency-type]:checked').val();
   });
 });
