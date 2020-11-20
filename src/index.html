@@ -4,9 +4,47 @@
   <title>TODO</title>
 </head>
 <body>
-  <form id="TODO">
-    <label for="TODO">TODO:</label>
-    <input id="TODO" type="TODO">
+  <form id="input">
+    <label for="currency">TODO:</label>
+    <input id="currency" class="form-control" type="number">
+    <div class="type-of-money">
+      <div class="radio">
+        <label>
+          <input type="radio" name="currency-type" value="USD" checked>
+          US Dollars
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="currency-type" value="EUR">
+          Euro
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="currency-type" value="CAD">
+          Canadian Dollar
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="currency-type" value="JPY">
+          Yen
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="currency-type" value="HKD">
+          Hong Kong Dollar
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="currency-type" value="GBP">
+          Pound Sterling
+        </label>
+      </div>
+    </div>
     <button type="submit">Submit</button>
   </form>
   <ul id="response"></ul>
