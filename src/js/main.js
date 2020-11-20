@@ -10,12 +10,12 @@ function clearFields() {
 
 function displayExchange(currency, currencyType, USD, CAD, EUR, YEN, HKD, GBP) {
   $('.display-conversion').text(`The exchange rate of ${currency} ${currencyType} is:`);
-  $('.USD-conversion').text(`${USD * currency} in USD`);
-  $('.CAD-conversion').text(`${CAD * currency} in CAD`);
-  $('.EUR-conversion').text(`${EUR * currency} in EUR`);
-  $('.YEN-conversion').text(`${YEN * currency} in YEN`);
-  $('.HKD-conversion').text(`${HKD * currency} in HKD`);
-  $('.GBP-conversion').text(`${GBP * currency} in GBP`);
+  $('.USD-conversion').text(`${(USD * currency).toFixed(2)} in USD`);
+  $('.CAD-conversion').text(`${(CAD * currency).toFixed(2)} in CAD`);
+  $('.EUR-conversion').text(`${(EUR * currency).toFixed(2)} in EUR`);
+  $('.YEN-conversion').text(`${(YEN * currency).toFixed(2)} in YEN`);
+  $('.HKD-conversion').text(`${(HKD * currency).toFixed(2)} in HKD`);
+  $('.GBP-conversion').text(`${(GBP * currency).toFixed(2)} in GBP`);
 }
 
 function displayErrors(error) {

@@ -7,6 +7,6 @@ describe('Exchange', () => {
   });
 
   test('Should correctly make API call to ExchangeRate-API', () => {
-    expect(exchange1.result).toEqual('success');
+    expect(exchange1.response).toEqual('success');
   })
 })

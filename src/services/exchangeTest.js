@@ -1,4 +1,4 @@
-export default class CurrencyResponse {
+export default class CurrencyResponseSample {
   constructor() {
       this.result = "success";
       this.documentation = "https://www.exchangerate-api.com/docs";
