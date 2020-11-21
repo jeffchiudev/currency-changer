@@ -10,12 +10,12 @@ function clearFields() {
 
 function displayExchange(currency, currencyType, USD, CAD, EUR, YEN, HKD, GBP) {
   $('.display-conversion').text(`The exchange rate of ${currency} ${currencyType} is:`);
-  $('.USD-conv').text(`${(USD * currency).toFixed(2)} in USD`);
-  $('.CAD-conv').text(`${(CAD * currency).toFixed(2)} in CAD`);
-  $('.EUR-conv').text(`${(EUR * currency).toFixed(2)} in EUR`);
-  $('.YEN-conv').text(`${(YEN * currency).toFixed(2)} in YEN`);
-  $('.HKD-conv').text(`${(HKD * currency).toFixed(2)} in HKD`);
-  $('.GBP-conv').text(`${(GBP * currency).toFixed(2)} in GBP`);
+  $('.USD-conv').html(`<strong>$${(USD * currency).toFixed(2)}</strong> in USD`);
+  $('.CAD-conv').html(`<strong>$${(CAD * currency).toFixed(2)}</strong> in CAD`);
+  $('.EUR-conv').html(`<strong>€${(EUR * currency).toFixed(2)}</strong> in EUR`);
+  $('.YEN-conv').html(`<strong>¥${(YEN * currency).toFixed(2)}</strong> in YEN`);
+  $('.HKD-conv').html(`<strong>$${(HKD * currency).toFixed(2)}</strong> in HKD`);
+  $('.GBP-conv').html(`<strong>£${(GBP * currency).toFixed(2)}</strong> in GBP`);
 }
 
 function displayErrors(error) {

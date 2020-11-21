@@ -2,6 +2,22 @@ body {
   background-color: white;
 }
 
+.jumbotron {
+  background-image: url(../assets/images/exchange.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: rgb(52, 248, 68);
+  font-weight: 500;
+}
+
+.container {
+  background-image: url(../assets/images/money.jpg);
+  font-size: 20px;
+  font-weight: 300;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgb(41, 23, 204);
+}
+
 .row {
   padding: 20px 0px;
 }
