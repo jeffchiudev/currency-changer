@@ -10,22 +10,25 @@ body {
   font-weight: 500;
 }
 
-.container {
+body {
   background-image: url(../assets/images/money.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 100;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: rgb(41, 23, 204);
+  color: rgb(255, 255, 255);
+}
+
+.container {
+  padding: 50px;
 }
 
 .row {
   padding: 20px 0px;
 }
 
-.display-conversion {
-  font-size: 17px;
-}
-
-  .USD-conv, .CAD-conv, .EUR-conv, .YEN-conv, .HKD-conv, .GBP-conv {
+  .display-conversion, .USD-conv, .CAD-conv, .EUR-conv, .YEN-conv, .HKD-conv, .GBP-conv {
   margin: 10px 0px;
 }
